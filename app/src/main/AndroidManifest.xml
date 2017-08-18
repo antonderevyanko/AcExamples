@@ -15,5 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".LifecycleAwareActivity"
+            android:label="Lifecycle aware example"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".LifeDataActivity"
+            android:label="Life data example"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 </manifest>
