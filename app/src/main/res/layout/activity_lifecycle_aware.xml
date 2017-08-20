@@ -50,7 +50,7 @@
         </android.support.design.widget.TextInputLayout>
         <CheckBox
             android:id="@+id/chbAgreeConditions"
-            android:onCheckedChanged="@{viewModel::checkedChangedListener}"
+            android:checked="@={viewModel.isConditionsAccepted}"
             android:text="I agree with terms and conditions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             android:layout_marginTop="@dimen/login_top_margin"/>
         <Button
             android:text="Login"
-            android:enabled="@{viewModel.isButtonEnabled}"
+            android:enabled="@{viewModel.isConditionsAccepted}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnLogin"
