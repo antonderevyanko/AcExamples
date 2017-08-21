@@ -1,11 +1,11 @@
 package org.andronotes.acexample
 
+import android.arch.lifecycle.LifecycleActivity
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import org.andronotes.acexample.databinding.ActivityLifecycleAwareBinding
 
-class LifecycleAwareActivity : AppCompatActivity() {
+class LifecycleAwareActivity : LifecycleActivity() {
 
     private val binding: ActivityLifecycleAwareBinding by lazy {
         DataBindingUtil.setContentView<ActivityLifecycleAwareBinding>(this, R.layout.activity_lifecycle_aware)
