@@ -1,29 +1,28 @@
 package org.andronotes.acexample
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import org.andronotes.acexample.databinding.ActivityMainBinding
+import android.support.v7.app.AppCompatActivity
+import butterknife.ButterKnife
+import butterknife.OnClick
 
-class MainActivity : AppCompatActivity(), MainActivityVM.MainActivityCallback {
-
-    private val binding: ActivityMainBinding by lazy {
-        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-    }
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val mainActivityVM = MainActivityVM()
-        mainActivityVM.mainActivityCallback = this
-        binding.viewModel = mainActivityVM
+        setContentView(R.layout.activity_main)
+        ButterKnife.bind(this)
     }
 
-    override fun onRunLifecycleAware() {
+    @Suppress("unused")
+    @OnClick(R.id.btnLifecycle)
+    fun onRunLifecycleAwareClick() {
         startActivity(Intent(this, LifecycleAwareActivity::class.java))
     }
 
-    override fun onRunLifeData() {
+    @Suppress("unused")
+    @OnClick(R.id.btnLiveDataExample)
+    fun onRunLifeDataClick() {
         startActivity(Intent(this, LifeDataActivity::class.java))
     }
 }
