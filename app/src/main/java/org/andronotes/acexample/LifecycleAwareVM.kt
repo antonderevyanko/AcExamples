@@ -10,5 +10,9 @@ class LifecycleAwareVM: ViewModel() {
 
     var isConditionsAccepted = MutableLiveData<Boolean>()
 
+    init {
+        isConditionsAccepted.value = false
+    }
+
 
 }
